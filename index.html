@@ -1,0 +1,1865 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nails For Stars ✦ | Salón de Uñas en Oviedo</title>
+    <meta
+      name="description"
+      content="Arte a mano. Cuidado con alma. El salón de uñas de confianza en Oviedo, Asturias."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      /* CSS Variables */
+      :root {
+        --c-blush: #f9e4e8;
+        --c-vibrant: #f2a7b8;
+        --c-mauve: #c9768a;
+        --c-gold: #e8c9a0;
+        --c-pearl: #fff8f9;
+        --c-black: #1a1a1a;
+        --c-dark-bg: #f2d6dc;
+
+        --f-title: "Cormorant Garamond", serif;
+        --f-accent: "Great Vibes", cursive;
+        --f-body: "Nunito", sans-serif;
+
+        --transition: all 0.3s ease;
+      }
+
+      /* Reset & Base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+      body {
+        font-family: var(--f-body);
+        color: var(--c-black);
+        background-color: var(--c-pearl);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3 {
+        font-family: var(--f-title);
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      .accent-text {
+        font-family: var(--f-accent);
+        color: var(--c-mauve);
+      }
+      .eyebrow {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--c-gold);
+        font-weight: 700;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Layout */
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      section {
+        padding: 14rem 0;
+        position: relative;
+      }
+      .gold-divider {
+        height: 1px;
+        background: var(--c-gold);
+        width: 100%;
+        opacity: 0.5;
+        margin: 2rem 0;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: var(--transition);
+        cursor: pointer;
+        border: none;
+        font-family: var(--f-body);
+        font-size: 1rem;
+        gap: 0.5rem;
+      }
+      .btn-primary {
+        background: var(--c-mauve);
+        color: white;
+        box-shadow: 0 4px 15px rgba(201, 118, 138, 0.3);
+      }
+      .btn-primary:hover {
+        background: #b06075;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(201, 118, 138, 0.4);
+      }
+      .btn-secondary {
+        background: transparent;
+        color: var(--c-mauve);
+        border: 1px solid var(--c-mauve);
+      }
+      .btn-secondary:hover {
+        background: var(--c-blush);
+        transform: translateY(-2px);
+      }
+      .btn-whatsapp {
+        background: #25d366;
+        color: white;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      }
+      .btn-whatsapp:hover {
+        background: #1ebe57;
+        transform: translateY(-2px);
+      }
+
+      /* Animations */
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+      .animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(10deg);
+        }
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+      }
+
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(255, 248, 249, 0.95);
+        backdrop-filter: blur(10px);
+        transition: var(--transition);
+        padding: 1rem 0;
+      }
+      .navbar.scrolled {
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        padding: 0.8rem 0;
+      }
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-family: var(--f-accent);
+        font-size: 2rem;
+        color: var(--c-mauve);
+        font-weight: 400;
+      }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+      .nav-links a {
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: var(--transition);
+      }
+      .nav-links a:hover {
+        color: var(--c-mauve);
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--c-mauve);
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          var(--c-pearl) 0%,
+          var(--c-blush) 100%
+        );
+        padding-top: 120px;
+        padding-bottom: 10rem;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 800px;
+        padding: 0 1.5rem;
+      }
+      .hero h1 {
+        font-size: clamp(3rem, 6vw, 5rem);
+        color: var(--c-mauve);
+        margin-bottom: 1.5rem;
+      }
+      .hero p {
+        font-size: clamp(1.1rem, 2vw, 1.3rem);
+        margin-bottom: 2.5rem;
+        color: var(--c-black);
+      }
+      .hero-btns {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+      }
+      .trust-badges {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .badge {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      /* Cherry Blossoms */
+      .blossom {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23F2A7B8" stroke="none"><path d="M12 2.5c-1.5-1-3.5-1-5 0-2 1.5-2 4 0 6l5 5 5-5c2-2 2-4.5 0-6-1.5-1-3.5-1-5 0z"/></svg>');
+        background-size: contain;
+        opacity: 0.4;
+      }
+      .b1 {
+        top: 10%;
+        left: 10%;
+        animation: float 6s ease-in-out infinite;
+      }
+      .b2 {
+        top: 20%;
+        right: 15%;
+        animation: float 8s ease-in-out infinite 1s;
+      }
+      .b3 {
+        bottom: 15%;
+        left: 20%;
+        animation: float 7s ease-in-out infinite 2s;
+      }
+      .b4 {
+        bottom: 25%;
+        right: 10%;
+        animation: float 9s ease-in-out infinite 0.5s;
+      }
+
+      /* About Section */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+      .about-img-container {
+        aspect-ratio: 1/1;
+        background: var(--c-blush);
+        border-radius: 24px;
+        border: 2px solid var(--c-gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .about-img-text {
+        font-family: var(--f-accent);
+        font-size: 2rem;
+        color: var(--c-mauve);
+        z-index: 2;
+      }
+      .about-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .about-content p {
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+      .value-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .value-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: white;
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      }
+      .value-icon {
+        font-size: 1.5rem;
+      }
+
+      /* Services Section */
+      .services {
+        background: var(--c-dark-bg);
+        text-align: center;
+      }
+      .services h2 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+      }
+      .tabs {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+      }
+      .tab-btn {
+        padding: 0.8rem 2rem;
+        border: none;
+        background: transparent;
+        font-family: var(--f-body);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--c-black);
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        transition: var(--transition);
+      }
+      .tab-btn.active {
+        color: var(--c-mauve);
+        border-bottom-color: var(--c-mauve);
+      }
+      .tab-content {
+        display: none;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      .tab-content.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .service-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 16px;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        transition: var(--transition);
+      }
+      .service-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      }
+      .service-info h3 {
+        font-family: var(--f-body);
+        font-size: 1.1rem;
+        margin-bottom: 0.2rem;
+      }
+      .service-info p {
+        font-size: 0.9rem;
+        color: #666;
+      }
+      .service-price {
+        font-weight: 700;
+        color: var(--c-mauve);
+        font-size: 1.2rem;
+        white-space: nowrap;
+        margin-left: 1rem;
+      }
+      .services-cta {
+        margin-top: 3rem;
+      }
+
+      /* Gallery Section */
+      .gallery {
+        text-align: center;
+      }
+      .gallery h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .gallery-subtitle {
+        max-width: 600px;
+        margin: 0 auto 3rem;
+        font-size: 1.1rem;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+      .gallery-item {
+        aspect-ratio: 1/1;
+        background: linear-gradient(135deg, var(--c-blush), var(--c-mauve));
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .gallery-item-text {
+        font-family: var(--f-accent);
+        font-size: 1.5rem;
+        color: white;
+        z-index: 1;
+      }
+      .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(26, 26, 26, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: var(--transition);
+        z-index: 2;
+      }
+      .gallery-overlay span {
+        color: white;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transform: translateY(20px);
+        transition: var(--transition);
+      }
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+      .gallery-item:hover .gallery-overlay span {
+        transform: translateY(0);
+      }
+      .gallery-item:hover {
+        transform: scale(0.98);
+      }
+
+      /* Reviews Section */
+      .reviews {
+        background: var(--c-pearl);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .reviews h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .trust-badge-large {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 3rem;
+        font-weight: 600;
+      }
+
+      .carousel-wrapper {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto 3rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .carousel-btn {
+        background: white;
+        border: 1px solid var(--c-blush);
+        color: var(--c-mauve);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        flex-shrink: 0;
+        z-index: 10;
+      }
+      .carousel-btn:hover {
+        background: var(--c-mauve);
+        color: white;
+        transform: scale(1.1);
+      }
+
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: 1rem;
+        border-radius: 24px;
+      }
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+      .review-card {
+        min-width: 100%;
+        padding: 2.5rem;
+        background: white;
+        border: 1px solid var(--c-blush);
+        border-radius: 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        text-align: center;
+      }
+      .stars {
+        color: #ffd700;
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+      }
+      .review-text {
+        font-style: italic;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: #444;
+      }
+      .review-author {
+        font-weight: 700;
+        color: var(--c-black);
+      }
+      .verified {
+        font-size: 0.8rem;
+        color: var(--c-mauve);
+        font-weight: 600;
+        margin-left: 0.5rem;
+      }
+
+      .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ddd;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+      .dot.active {
+        background: var(--c-mauve);
+        transform: scale(1.2);
+      }
+
+      /* Location Section */
+      .location-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+      .location-info h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }
+      .info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+      .info-icon {
+        color: var(--c-mauve);
+        margin-top: 0.2rem;
+      }
+      .hours-table {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 0.5rem;
+      }
+      .hours-table div {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--c-blush);
+      }
+      .map-container {
+        aspect-ratio: 4/3;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Booking Section */
+      .booking {
+        text-align: center;
+        background: linear-gradient(to bottom, var(--c-pearl), var(--c-blush));
+      }
+      .booking h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .booking p {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .booking-btns {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+      }
+      .booking-btns .btn {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+      }
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .social-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--c-mauve);
+        transition: var(--transition);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+      .social-icon:hover {
+        background: var(--c-mauve);
+        color: white;
+        transform: translateY(-3px);
+      }
+      .social-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* Floating WhatsApp Button */
+      .floating-whatsapp {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        z-index: 1000;
+        transition: var(--transition);
+        animation: pulse 2s infinite;
+      }
+      .floating-whatsapp:hover {
+        transform: scale(1.1);
+        background-color: #1ebe57;
+      }
+      .floating-whatsapp svg {
+        width: 35px;
+        height: 35px;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--c-black);
+        color: var(--c-pearl);
+        padding: 5rem 0 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 4rem;
+      }
+      .footer-brand .logo {
+        color: var(--c-pearl);
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .footer-brand p {
+        color: #aaa;
+        font-size: 1.1rem;
+      }
+      .footer h4 {
+        font-family: var(--f-body);
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: var(--c-gold);
+      }
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .footer-links a {
+        color: #ccc;
+        transition: var(--transition);
+        display: inline-flex;
+        align-items: center;
+      }
+      .footer-links a:hover {
+        color: var(--c-gold);
+      }
+      .footer-links a svg {
+        width: 24px;
+        height: 24px;
+      }
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        color: #888;
+        font-size: 0.9rem;
+        border-top: 1px solid rgba(232, 201, 160, 0.2);
+      }
+      .footer-flower {
+        position: absolute;
+        opacity: 0.05;
+        width: 150px;
+        height: 150px;
+      }
+      .ff-1 {
+        top: -50px;
+        left: -50px;
+      }
+      .ff-2 {
+        bottom: -50px;
+        right: -50px;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .about-grid,
+        .location-grid {
+          gap: 2rem;
+        }
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        section {
+          padding: 10rem 0;
+        }
+        .nav-links {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background: rgba(255, 248, 249, 0.98);
+          flex-direction: column;
+          padding: 2rem;
+          gap: 1.5rem;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+          transform: translateY(-150%);
+          transition: var(--transition);
+          opacity: 0;
+          pointer-events: none;
+        }
+        .nav-links.active {
+          transform: translateY(0);
+          opacity: 1;
+          pointer-events: all;
+        }
+        .nav-links .btn {
+          width: 100%;
+        }
+        .menu-toggle {
+          display: block;
+        }
+
+        .hero {
+          padding-top: 160px;
+          padding-bottom: 10rem;
+        }
+        .hero h1 {
+          font-size: 2.2rem;
+          margin-bottom: 1rem;
+        }
+        .hero p {
+          font-size: 1.05rem;
+          margin-bottom: 2rem;
+        }
+        .trust-badges {
+          flex-direction: column;
+          gap: 1rem;
+          align-items: center;
+        }
+
+        .about-grid,
+        .location-grid {
+          grid-template-columns: 1fr;
+          gap: 4rem;
+        }
+        .about-img-container {
+          max-width: 400px;
+          margin: 0 auto;
+        }
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .carousel-wrapper {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .carousel-container {
+          order: -1;
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+        .carousel-btn {
+          margin: 0 1rem;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 3rem;
+        }
+        .footer-links {
+          align-items: center;
+        }
+        .booking-btns {
+          flex-direction: column;
+        }
+        .booking-btns .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+      <div class="container nav-container">
+        <a href="#" class="logo">Nails for Stars ✦</a>
+        <button
+          class="menu-toggle"
+          id="mobile-menu-btn"
+          aria-label="Toggle menu"
+        >
+          <i data-lucide="menu"></i>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#inicio">Inicio</a>
+          <a href="#sobre-mi">Sobre Mí</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#resultados">Resultados</a>
+          <a href="#resenas">Reseñas</a>
+          <a href="#visitanos">Visítanos</a>
+          <a href="#reserva" class="btn btn-primary">Reservar cita</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+      <div class="blossom b1"></div>
+      <div class="blossom b2"></div>
+      <div class="blossom b3"></div>
+      <div class="blossom b4"></div>
+
+      <div class="container hero-content animate-on-scroll">
+        <span class="eyebrow">✦ Oviedo, Asturias ✦</span>
+        <h1>Uñas que merecen<br />brillar como estrellas ✦</h1>
+        <p>Arte a mano. Cuidado con alma. El salón de confianza de Oviedo.</p>
+        <div class="hero-btns">
+          <a href="#reserva" class="btn btn-primary">Reservar mi cita</a>
+          <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
+        </div>
+        <div class="trust-badges">
+          <div class="badge">
+            <i data-lucide="star" fill="#FFD700" color="#FFD700" size="18"></i>
+            4,7 en Google
+          </div>
+          <div class="badge">
+            <i data-lucide="sparkles" color="#C9768A" size="18"></i> Arte 100% a
+            mano
+          </div>
+          <div class="badge">
+            <i data-lucide="heart" color="#C9768A" size="18"></i> +10 años de
+            confianza
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mi">
+      <div class="container animate-on-scroll">
+        <div class="about-grid">
+          <div class="about-img-container" style="padding: 0">
+            <img
+              src="https://res.cloudinary.com/dfbsqy5ul/image/upload/v1774892333/442312924_783351613895176_2702315361022751366_n._rixpfj.jpg"
+              alt="Mery, Teddy y Mia"
+              style="width: 100%; height: 100%; object-fit: cover"
+              referrerpolicy="no-referrer"
+            />
+          </div>
+          <div class="about-content">
+            <span class="eyebrow">✦ Conoce a Mery</span>
+            <h2>Más que un salón, un lugar donde te cuidan de verdad</h2>
+            <p>
+              Soy Mery, y llevo más de 10 años convirtiendo las uñas de mis
+              clientas en pequeñas obras de arte. Cada diseño lo pinto a mano,
+              con dedicación, cariño y los mejores productos del mercado.
+            </p>
+            <p>
+              Mis clientas llevan años confiando en mí — y muchas de ellas se
+              han convertido en amigas. En Nails For Stars no existen las
+              prisas: cada cita es un momento para ti. Y si tienes suerte,
+              también conocerás a Teddy y Mia 🐾, mis dos chihuahuas que le dan
+              un encanto especial al salón.
+            </p>
+
+            <div class="value-cards">
+              <div class="value-card">
+                <span class="value-icon">🎨</span>
+                <span style="font-weight: 600">Diseños 100% a mano</span>
+              </div>
+              <div class="value-card">
+                <span class="value-icon">✨</span>
+                <span style="font-weight: 600">Productos de alta calidad</span>
+              </div>
+              <div class="value-card">
+                <span class="value-icon">🐾</span>
+                <span style="font-weight: 600">Ambiente único y acogedor</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="services">
+      <div class="container animate-on-scroll">
+        <span class="eyebrow">✦ Lo que ofrezco</span>
+        <h2>Servicios diseñados para hacerte brillar</h2>
+
+        <div class="tabs">
+          <button class="tab-btn active" data-target="semi">
+            Semiesmaltado
+          </button>
+          <button class="tab-btn" data-target="gel">Gel / Acrílico</button>
+          <button class="tab-btn" data-target="otros">Otros servicios</button>
+        </div>
+
+        <div class="tab-content active" id="semi">
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Semiesmaltado básico</h3>
+              <p>Color/francesa con 1 o 2 decoraciones sencillas por mano</p>
+            </div>
+            <div class="service-price">20€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Semiesmaltado completo</h3>
+              <p>
+                Babyboomer, color/francesa con decoraciones en todas las uñas
+              </p>
+            </div>
+            <div class="service-price">23€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Semiesmaltado en pies</h3>
+            </div>
+            <div class="service-price">20€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Quitar semiesmaltado</h3>
+            </div>
+            <div class="service-price">5€</div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="gel">
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Sin extensión</h3>
+              <p>Color/francesa con 1 o 2 decoraciones sencillas por mano</p>
+            </div>
+            <div class="service-price">37€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Con extensión XS</h3>
+              <p>Incluye 1 o 2 decoraciones sencillas por mano</p>
+            </div>
+            <div class="service-price">45€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Con extensión S</h3>
+            </div>
+            <div class="service-price">50€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Con extensión M</h3>
+            </div>
+            <div class="service-price">55€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Con extensión L</h3>
+            </div>
+            <div class="service-price">60€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Con extensión XL</h3>
+            </div>
+            <div class="service-price">65€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Mantenimiento XS/S</h3>
+            </div>
+            <div class="service-price">37€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Mantenimiento M/L</h3>
+            </div>
+            <div class="service-price">40€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Mantenimiento XL</h3>
+            </div>
+            <div class="service-price">45€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Quitar gel/acrílico</h3>
+            </div>
+            <div class="service-price">10€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Kapping</h3>
+              <p>Base de acrílico transparente sin brillo ni color</p>
+            </div>
+            <div class="service-price">20€</div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="otros">
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Manicura sencilla</h3>
+            </div>
+            <div class="service-price">5€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Brillo color</h3>
+            </div>
+            <div class="service-price">15€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Brillo</h3>
+            </div>
+            <div class="service-price">10€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Decoraciones complejas</h3>
+            </div>
+            <div class="service-price">desde 5€/ud</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Lima</h3>
+            </div>
+            <div class="service-price">3€</div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <h3>Uña rota</h3>
+              <p>Garantía primeros 15 días, después 3€/uña</p>
+            </div>
+            <div class="service-price">3€</div>
+          </div>
+        </div>
+
+        <div class="services-cta">
+          <a href="#reserva" class="btn btn-primary">Quiero reservar mi cita</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="resultados" class="gallery" style="padding-top: 18rem">
+      <div class="container animate-on-scroll">
+        <span class="eyebrow">✦ Mi trabajo</span>
+        <h2>Arte pintado a mano, uña a uña</h2>
+        <p class="gallery-subtitle">
+          Cada diseño es único. Mery no usa pegatinas ni prints — todo lo dibuja
+          directamente sobre tu uña.
+        </p>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="https://res.cloudinary.com/dfbsqy5ul/image/upload/v1774892333/630120218_18553667623043750_3802316574555484172_n._ce2cik.webp"
+              alt="Diseño de uñas"
+              style="
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+              referrerpolicy="no-referrer"
+            />
+            <div class="gallery-overlay">
+              <span>✦ Ver más en Instagram</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://res.cloudinary.com/dfbsqy5ul/image/upload/v1774892332/557404483_18523372018043750_9055015315915491768_n._ia7fm2.webp"
+              alt="Diseño de uñas"
+              style="
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+              referrerpolicy="no-referrer"
+            />
+            <div class="gallery-overlay">
+              <span>✦ Ver más en Instagram</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://res.cloudinary.com/dfbsqy5ul/image/upload/v1774892332/519361800_18509008888043750_7415230642694863266_n._v9yx0j.webp"
+              alt="Diseño de uñas"
+              style="
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+              referrerpolicy="no-referrer"
+            />
+            <div class="gallery-overlay">
+              <span>✦ Ver más en Instagram</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://res.cloudinary.com/dfbsqy5ul/image/upload/v1774892332/589179142_18535961140043750_7174360456278272932_n._sm0mnd.webp"
+              alt="Diseño de uñas"
+              style="
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+              referrerpolicy="no-referrer"
+            />
+            <div class="gallery-overlay">
+              <span>✦ Ver más en Instagram</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://res.cloudinary.com/dfbsqy5ul/image/upload/v1774892333/551382589_18520769623043750_5666336792644127187_n._ifyuth.webp"
+              alt="Diseño de uñas"
+              style="
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+              referrerpolicy="no-referrer"
+            />
+            <div class="gallery-overlay">
+              <span>✦ Ver más en Instagram</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://res.cloudinary.com/dfbsqy5ul/image/upload/v1774892333/621775042_18545769352043750_9092944625541291216_n._m61tbc.webp"
+              alt="Diseño de uñas"
+              style="
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+              referrerpolicy="no-referrer"
+            />
+            <div class="gallery-overlay">
+              <span>✦ Ver más en Instagram</span>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="https://www.instagram.com/nailsforstarsoviedo/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-secondary"
+          >Ver más en Instagram →</a
+        >
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="resenas" class="reviews">
+      <div class="container animate-on-scroll">
+        <span class="eyebrow">✦ Lo que dicen mis clientas</span>
+        <h2>Años de confianza, uñas de 10</h2>
+        <div class="trust-badge-large">
+          <i data-lucide="star" fill="#FFD700" color="#FFD700" size="20"></i>
+          4,7 ⭐ en Google · Más de 40 reseñas verificadas
+        </div>
+
+        <div class="carousel-wrapper">
+          <button
+            class="carousel-btn"
+            id="prev-btn"
+            aria-label="Anterior reseña"
+          >
+            <i data-lucide="chevron-left"></i>
+          </button>
+
+          <div class="carousel-container" id="carousel">
+            <div class="carousel-track" id="carousel-track">
+              <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">
+                  "UNA ARTISTA. Sus diseños son espectaculares, sus productos la
+                  última novedad, pero lo que más me gusta es su amabilidad y el
+                  cariño que le pone a todo. Llevo más de tres años con ella."
+                </p>
+                <p class="review-author">
+                  Belen Liñares
+                  <span class="verified">✦ Clienta verificada</span>
+                </p>
+              </div>
+              <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">
+                  "Mery es una profesional como la copa de un pino, además de
+                  artistaza. Plasma en tus uñas lo que le pidas, todo pintado a
+                  mano y usando productos de calidad. Desde que la conocí, no
+                  pongo mis uñas en otras manos."
+                </p>
+                <p class="review-author">
+                  M Ol <span class="verified">✦ Clienta verificada</span>
+                </p>
+              </div>
+              <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">
+                  "Estás 5 minutos hablando con ella y parece que la conoces de
+                  una vida. Es mi primera experiencia y ya tengo cita para la
+                  segunda. Se ha convertido sin duda en mi sitio de confianza."
+                </p>
+                <p class="review-author">
+                  Jessica H. <span class="verified">✦ Clienta verificada</span>
+                </p>
+              </div>
+              <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">
+                  "No es la primera vez que voy ni será la última. Siempre ha
+                  sido formal en las citas y una gran profesional. Llevo años
+                  eligiéndola."
+                </p>
+                <p class="review-author">
+                  Lucia M. <span class="verified">✦ Clienta verificada</span>
+                </p>
+              </div>
+              <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">
+                  "Lo que más me gusta es su compromiso con la búsqueda de la
+                  excelencia."
+                </p>
+                <p class="review-author">
+                  Alejandro T.
+                  <span class="verified">✦ Clienta verificada</span>
+                </p>
+              </div>
+              <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">
+                  "Mery es maravillosa, atenta, amable, educada, dibuja
+                  virguerías. Le dan un encanto especial Teddy y Mia 🐾. No la
+                  cambiaría por nada."
+                </p>
+                <p class="review-author">
+                  Paloma A. <span class="verified">✦ Clienta verificada</span>
+                </p>
+              </div>
+              <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">
+                  "Llevo 4 años en este sitio porque sin duda es la mejor. Una
+                  chica encantadora y muy amable. Gracias por dejarme las uñas
+                  siempre tan perfectas."
+                </p>
+                <p class="review-author">
+                  Cristina D. <span class="verified">✦ Clienta verificada</span>
+                </p>
+              </div>
+              <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">
+                  "Elegancia y buen gusto, y la atención es magnífica. Del 1 al
+                  5 se lleva un 10."
+                </p>
+                <p class="review-author">
+                  Maggie L. <span class="verified">✦ Clienta verificada</span>
+                </p>
+              </div>
+            </div>
+            <div class="carousel-dots" id="carousel-dots"></div>
+          </div>
+
+          <button
+            class="carousel-btn"
+            id="next-btn"
+            aria-label="Siguiente reseña"
+          >
+            <i data-lucide="chevron-right"></i>
+          </button>
+        </div>
+
+        <a
+          href="https://www.google.com/maps/place/Nails+For+Stars+U%C3%B1as+de+Gel+-+Asturias/@43.3671658,-5.8436401,17z/data=!4m18!1m9!3m8!1s0xd368cf479dd2e57:0x239a899057088406!2sNails+For+Stars+U%C3%B1as+de+Gel+-+Asturias!8m2!3d43.3671619!4d-5.8410652!9m1!1b1!16s%2Fg%2F1tg7bbbv!3m7!1s0xd368cf479dd2e57:0x239a899057088406!8m2!3d43.3671619!4d-5.8410652!9m1!1b1!16s%2Fg%2F1tg7bbbv?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-secondary"
+          >Dejar mi reseña en Google →</a
+        >
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="visitanos">
+      <div class="container animate-on-scroll">
+        <div class="location-grid">
+          <div class="location-info">
+            <span class="eyebrow">✦ Encuéntranos</span>
+            <h2>Ven a vernos a Oviedo</h2>
+
+            <div class="info-item">
+              <i data-lucide="map-pin" class="info-icon"></i>
+              <div>
+                <strong>Dirección</strong><br />
+                C. Padre Florencio, 6, 33011 Oviedo, Asturias
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i data-lucide="phone" class="info-icon"></i>
+              <div>
+                <strong>Teléfono</strong><br />
+                <a
+                  href="tel:+34648444582"
+                  style="color: var(--c-mauve); font-weight: 600"
+                  >648 44 45 82</a
+                >
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i data-lucide="clock" class="info-icon"></i>
+              <div>
+                <strong>Horario</strong>
+                <div class="hours-table">
+                  <div>
+                    <span>Lunes a Viernes:</span> <span>10:00 – 21:00</span>
+                  </div>
+                  <div><span>Sábado y Domingo:</span> <span>Cerrado</span></div>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="https://www.google.com/maps/place/Nails+For+Stars+U%C3%B1as+de+Gel+-+Asturias/@43.3671658,-5.8436401,17z/data=!4m16!1m9!3m8!1s0xd368cf479dd2e57:0x239a899057088406!2sNails+For+Stars+U%C3%B1as+de+Gel+-+Asturias!8m2!3d43.3671619!4d-5.8410652!9m1!1b1!16s%2Fg%2F1tg7bbbv!3m5!1s0xd368cf479dd2e57:0x239a899057088406!8m2!3d43.3671619!4d-5.8410652!16s%2Fg%2F1tg7bbbv?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-secondary"
+              style="margin-top: 1rem"
+              >Cómo llegar →</a
+            >
+          </div>
+
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2899.882877028717!2d-5.843640123381667!3d43.36716587111663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd368cf479dd2e57%3A0x239a899057088406!2sNails%20For%20Stars%20U%C3%B1as%20de%20Gel%20-%20Asturias!5e0!3m2!1ses!2ses!4v1711812345678!5m2!1ses!2ses"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="reserva" class="booking">
+      <div class="container animate-on-scroll">
+        <span class="eyebrow">✦ Pide tu cita</span>
+        <h2>Reserva tu momento de brillo</h2>
+        <p>
+          Escríbenos por WhatsApp o llámanos directamente. Responderemos lo
+          antes posible.
+        </p>
+
+        <div class="booking-btns">
+          <a
+            href="https://wa.me/34648444582"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-whatsapp"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 448 512"
+              fill="currentColor"
+            >
+              <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+              />
+            </svg>
+            Reservar por WhatsApp
+          </a>
+          <a href="tel:+34648444582" class="btn btn-primary whitespace-nowrap">
+            <i data-lucide="phone" size="20"></i>
+            Llamar ahora: 648 44 45 82
+          </a>
+        </div>
+
+        <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem">
+          También puedes seguirnos en redes para ver nuestros últimos diseños 🌸
+        </p>
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/nailsforstarsoviedo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+            aria-label="Instagram"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+              fill="currentColor"
+            >
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.facebook.com/nailsforstars/?locale=es_ES"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+            aria-label="Facebook"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 512"
+              fill="currentColor"
+            >
+              <path
+                d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <svg class="footer-flower ff-1" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12 2.5c-1.5-1-3.5-1-5 0-2 1.5-2 4 0 6l5 5 5-5c2-2 2-4.5 0-6-1.5-1-3.5-1-5 0z"
+        />
+      </svg>
+      <svg class="footer-flower ff-2" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12 2.5c-1.5-1-3.5-1-5 0-2 1.5-2 4 0 6l5 5 5-5c2-2 2-4.5 0-6-1.5-1-3.5-1-5 0z"
+        />
+      </svg>
+
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <span class="logo">Nails for Stars ✦</span>
+            <p>Arte a mano. Cuidado con alma.</p>
+          </div>
+
+          <div>
+            <h4>Navegación</h4>
+            <div class="footer-links">
+              <a href="#inicio">Inicio</a>
+              <a href="#sobre-mi">Sobre Mí</a>
+              <a href="#servicios">Servicios</a>
+              <a href="#resultados">Resultados</a>
+            </div>
+          </div>
+
+          <div>
+            <h4>Contacto</h4>
+            <div class="footer-links">
+              <a href="#visitanos">C. Padre Florencio, 6, Oviedo</a>
+              <a href="tel:+34648444582">648 44 45 82</a>
+              <span>L-V: 10:00 - 21:00</span>
+            </div>
+          </div>
+
+          <div>
+            <h4>Síguenos</h4>
+            <div class="footer-links" style="flex-direction: row; gap: 1rem">
+              <a
+                href="https://www.instagram.com/nailsforstarsoviedo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.facebook.com/nailsforstars/?locale=es_ES"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          &copy; 2025 Nails For Stars · Oviedo, Asturias · Todos los derechos
+          reservados
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/34648444582"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="floating-whatsapp"
+      aria-label="Contactar por WhatsApp"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"
+        fill="currentColor"
+      >
+        <path
+          d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+        />
+      </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Navbar Scroll Effect & Mobile Menu
+      const navbar = document.getElementById("navbar");
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      const navLinks = document.getElementById("nav-links");
+      const navItems = navLinks.querySelectorAll("a");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      mobileBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      navItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+        });
+      });
+
+      // Intersection Observer for Animations
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.15,
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Tabs Logic
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const tabContents = document.querySelectorAll(".tab-content");
+
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active class from all
+          tabBtns.forEach((b) => b.classList.remove("active"));
+          tabContents.forEach((c) => c.classList.remove("active"));
+
+          // Add active class to clicked
+          btn.classList.add("active");
+          const targetId = btn.getAttribute("data-target");
+          document.getElementById(targetId).classList.add("active");
+        });
+      });
+
+      // Carousel Logic
+      const track = document.getElementById("carousel-track");
+      const cards = document.querySelectorAll(".review-card");
+      const dotsContainer = document.getElementById("carousel-dots");
+      const prevBtn = document.getElementById("prev-btn");
+      const nextBtn = document.getElementById("next-btn");
+      let currentIndex = 0;
+      let interval;
+
+      // Create dots
+      cards.forEach((_, index) => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = document.querySelectorAll(".dot");
+
+      function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentIndex);
+        });
+      }
+
+      function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+        resetInterval();
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        updateCarousel();
+        resetInterval();
+      }
+
+      function startInterval() {
+        interval = setInterval(nextSlide, 4000);
+      }
+
+      function resetInterval() {
+        clearInterval(interval);
+        startInterval();
+      }
+
+      // Button Listeners
+      prevBtn.addEventListener("click", prevSlide);
+      nextBtn.addEventListener("click", () => {
+        nextSlide();
+        resetInterval();
+      });
+
+      // Pause on hover
+      const carouselContainer = document.getElementById("carousel");
+      carouselContainer.addEventListener("mouseenter", () =>
+        clearInterval(interval),
+      );
+      carouselContainer.addEventListener("mouseleave", startInterval);
+
+      // Start autoplay
+      startInterval();
+    </script>
+  </body>
+</html>
